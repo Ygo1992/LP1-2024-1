@@ -9,4 +9,15 @@ export const ehPar = (numero) => {
     return numero % 2 === 0? true : false;
 } 
 
-//export { ehPar }
+//v2 da ehPar, usando Promise
+export const ehPar2 = (numero) => {
+    return new Promise((resolver, rejeitar) => {
+        if(isNaN(numero)) {
+            rejeitar({ erro: 'Número inválido' });
+        } else {
+            resolver(numero % 2 === 0)? true : false;
+        }
+    })
+}
+
+//export { ehPar, ehPar2 }

@@ -4,7 +4,7 @@ const dados = 'Texto Texto Texto Texto Texto...';
 
 //v1 - callback
 fs.writeFile('./arquivo1.txt', dados, () => {
-    console.log('Arquivo gravado com sucesso!');
+  console.log('Arquivo gravado com sucesso!');
 });
 
 //v2 - callback hell
