@@ -15,7 +15,7 @@ emissorEvento.on('eventoUm', funcao1);
 emissorEvento.on('eventoUm', funcao2);
 
 //Emitindo/Chamando o evento "eventoUm"
-//emissorEvento.emit('eventoUm');
+emissorEvento.emit('eventoUm');
 
 //Removendo/Desvinculando um listener do eventoUm
 emissorEvento.off('eventoUm', funcao1);
