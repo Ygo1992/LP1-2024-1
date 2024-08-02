@@ -4,14 +4,14 @@ import { ehPar4 } from "./matematica.js";
 //console.log(ehPar('asdasd'));
 
 //v3 - Promises
-/*ehPar3(10)
+ehPar3(10)
 .then((resultado) => console.log("Promessa Resolvida: ", resultado))
 .catch((erro) => { console.log(erro); })
 
 ehPar3('blabla')
 .then((resultado) => console.log("Promessa Resolvida!"))
 .catch((erro) => { console.log(erro); })
-*/
+
 
 //v4, usando async/await
 /*

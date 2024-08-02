@@ -3,7 +3,7 @@ import cron from 'node-cron';
 
 //Criando período para tarefa executar..
 //Todo segundo 05: 11h00m05; 11h01m05; 11h02m05
-//const periodo = '5 * * * * *';
+//const periodo1 = '5 * * * * *';
 //A cada 5 segundos
 const periodo = '*/5 * * * * *';
 
