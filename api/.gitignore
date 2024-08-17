@@ -1,0 +1,5 @@
+#Ignorando/Não versionando o arquivo .env
+.env
+
+#Ignorando/Não versionando a pasta node_modules/
+node_modules/

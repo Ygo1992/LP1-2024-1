@@ -3,10 +3,10 @@ const Produtos = require('../model/produto.js');
 exports.listarProdutos = async (req, res) => {
     try{
         const produtos = await Produtos.find({});
-        res.send(produtos);
+        res.status(200).send(produtos);
     } catch(erro) {
         console.log(erro);
-        res.send({ msg: '[ERRO]: Erro o listar!', detalhes: erro  });
+        res.status(500).send({ msg: '[ERRO]: Erro o listar!', detalhes: erro  });
     }
 }
 

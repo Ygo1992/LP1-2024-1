@@ -6,7 +6,8 @@ import mongoose from 'mongoose';
 */
 const express = require('express');
 const api = express();
-const URL_BD = 'mongodb+srv://aderbal:senha@cluster0.yr0dzyz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+require('dotenv').config();
+const URL_BD = process.env.URL_BD || '';
 const portaApi = 3000;
 const mongoose = require('mongoose');
 
@@ -35,7 +36,11 @@ api.listen(portaApi, function() {
 });
 
 const produtosController = require('./controller/produto.js');
-api.get('/produtos', produtosController.listarProdutos);
-api.post('/produto', produtosController.adicionarProduto);
-api.put('/produto', produtosController.editarProduto);
-api.delete('/produto', produtosController.removerProduto);
+
+const autenticacao = require('./middlewares/autenticacao.js');
+
+api.post('/login', autenticacao.logar);
+api.get('/produtos', autenticacao.autenticar, produtosController.listarProdutos);
+api.post('/produto', autenticacao.autenticar, produtosController.adicionarProduto);
+api.put('/produto', autenticacao.autenticar, produtosController.editarProduto);
+api.delete('/produto', autenticacao.autenticar, produtosController.removerProduto);
