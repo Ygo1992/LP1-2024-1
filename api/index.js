@@ -36,10 +36,11 @@ api.listen(portaApi, function() {
 });
 
 const produtosController = require('./controller/produto.js');
-
+const usuarioController = require('./controller/usuario.js');
 const autenticacao = require('./middlewares/autenticacao.js');
 
 api.post('/login', autenticacao.logar);
+api.post('/usuario', usuarioController.registrarUsuario);
 api.get('/produtos', autenticacao.autenticar, produtosController.listarProdutos);
 api.post('/produto', autenticacao.autenticar, produtosController.adicionarProduto);
 api.put('/produto', autenticacao.autenticar, produtosController.editarProduto);
