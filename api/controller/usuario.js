@@ -1,7 +1,7 @@
 const Usuario = require('../model/usuario.js');
 const bcrypt = require('bcrypt');
 
-exports.registrarUsuario = async (req, res) => {
+exports.registrarUsuario = async (req, res) => { 
   const usuario = req.headers.usuario;
   const senha = req.headers.senha;
   const email = req.headers.email;

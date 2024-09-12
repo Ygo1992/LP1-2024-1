@@ -6,6 +6,8 @@ import mongoose from 'mongoose';
 */
 const express = require('express');
 const api = express();
+const bodyParser = require('body-parser');
+api.use(bodyParser.json());
 require('dotenv').config();
 const URL_BD = process.env.URL_BD || '';
 const portaApi = 3000;

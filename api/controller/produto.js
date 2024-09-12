@@ -12,7 +12,7 @@ exports.listarProdutos = async (req, res) => {
 
 exports.adicionarProduto = async (req, res) => {
     //req.body OU req.params OU req.query
-    const novoProduto = req.headers;
+    const novoProduto = req.body;
     if(!novoProduto.nome || !novoProduto.preco) {
         res.send({ msg: '[ERRO]: Informar nome e preço!' });
     } else {
@@ -27,7 +27,7 @@ exports.adicionarProduto = async (req, res) => {
 }
 
 exports.editarProduto = async (req, res) => {
-    const produto = req.headers;
+    const produto = req.body;
     if(!produto.nome || !produto.preco) {
        return res.send({ msg: '[ERRO]: Informar nome e preço!' });
     }
@@ -44,7 +44,7 @@ exports.editarProduto = async (req, res) => {
 }
 
 exports.removerProduto = async (req, res) => {
-    const produto = req.headers;
+    const produto = req.body;
     if(!produto.nome)
        return res.send({ msg: '[ERRO]: Informar nome!' });
     try {
