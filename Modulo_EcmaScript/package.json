@@ -1,9 +1,9 @@
 {
   "name": "modulo-ecmascript",
-  "type": "module",
   "version": "1.0.0",
   "description": "Aula de importação e exportação módulo",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx nodemon index.js"
